@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Календарный план проекта: проектная деятельность в НовГУ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#f3f5f9;--card:#fff;--ink:#16213a;--mut:#5d6b86;--line:#dde3ee;--acc:#2447b8;--hl:#fff4c2;--bad:#fde8e8;--badt:#b42323;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1524;--card:#18213a;--ink:#e6ebf7;--mut:#97a3bf;--line:#2b3656;--acc:#7f9dff;--hl:#4a4320;--bad:#4a2428;--badt:#ff9a9a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1524;--card:#18213a;--ink:#e6ebf7;--mut:#97a3bf;--line:#2b3656;--acc:#7f9dff;--hl:#4a4320;--bad:#4a2428;--badt:#ff9a9a;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 Onest,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1500px;margin:0 auto;padding:16px}
+header{background:#16213a;color:#fff;border-radius:14px;padding:22px 26px;margin-bottom:14px}
+header h1{margin:0 0 4px;font-size:24px;font-weight:700;letter-spacing:-.01em}
+header .per{color:#aebbe0;font-weight:500;margin-bottom:8px}
+header p{margin:0;max-width:900px;color:#d7def2}
+.sum{display:grid;grid-template-columns:1fr 1.3fr 1.3fr;gap:12px;margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card h3{margin:0 0 10px;font-size:14px;font-weight:600}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.b{display:inline-flex;gap:6px;align-items:center;padding:3px 10px;border-radius:99px;font-size:12.5px;font-weight:500;border:1px solid transparent}
+.b i{font-style:normal;font-weight:700}
+.s0{background:#e8ebf2;color:#44506b}.s1{background:#dbe7ff;color:#1c3f9e}.s2{background:#fff0cc;color:#8a5a00}.s3{background:#d8f3e0;color:#176b34}.s4{background:#eadfe0;color:#7a3a3f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .s0{background:#2a3350;color:#c3ccdf}:root:not([data-theme="light"]) .s1{background:#233a78;color:#c9d8ff}:root:not([data-theme="light"]) .s2{background:#5a4513;color:#ffe2a0}:root:not([data-theme="light"]) .s3{background:#1c4a2c;color:#b9efc9}:root:not([data-theme="light"]) .s4{background:#4a3236;color:#f0cfd2}}
+.dl{list-style:none;margin:0;padding:0}.dl li{display:flex;justify-content:space-between;gap:10px;padding:4px 0;border-bottom:1px dashed var(--line);cursor:pointer}.dl li:last-child{border:0}.dl span:last-child{color:var(--mut);white-space:nowrap}
+.ld{display:grid;grid-template-columns:90px 1fr 80px;gap:4px 8px;align-items:center;font-size:12.5px}
+.ld .tr{height:9px;background:var(--line);border-radius:5px;overflow:hidden}.ld .tr div{height:100%;background:var(--acc)}.ld em{color:var(--mut);font-style:normal;text-align:right}
+.bar2{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+.bar2 .sp{flex:1}
+button,select,input,textarea{font:inherit;color:var(--ink)}
+button{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
+button:hover{border-color:var(--acc)}button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--acc);outline-offset:1px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}.seg button{border:0;border-radius:0}.seg button.on{background:var(--acc);color:#fff}
+select,input[type=search]{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 8px;max-width:100%}
+/* Gantt */
+.gw{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden}
+.gantt{overflow:auto;max-height:560px;position:relative}
+.gi{position:relative}
+.r{display:flex;height:30px;border-bottom:1px solid var(--line)}
+.lab{position:sticky;left:0;z-index:3;width:250px;flex:none;background:var(--card);padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-right:1px solid var(--line);cursor:pointer}
+.tl{position:relative;flex:none;background-image:linear-gradient(90deg,var(--line) 1px,transparent 1px)}
+.gh{position:sticky;top:0;z-index:5;background:var(--card)}
+.gh .r{height:24px}.gh .tl{background:none}
+.gh .m,.gh .w{position:absolute;top:0;bottom:0;border-left:1px solid var(--line);padding:3px 6px;font-size:12px;font-weight:600;overflow:hidden;white-space:nowrap}
+.gh .w{font-weight:400;color:var(--mut);font-size:10.5px;padding:4px 3px}
+.grp{background:var(--bg);font-weight:600}.grp .lab{background:var(--bg)}.grp .lab b{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px}
+.bar{position:absolute;top:7px;height:16px;border-radius:4px;cursor:pointer;min-width:6px}
+.bl{position:absolute;top:6px;font-size:11.5px;white-space:nowrap;color:var(--ink);pointer-events:none}
+.bar.s-3{opacity:.45}.bar.s-4{opacity:.3;filter:grayscale(1)}.bar.s-2{background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.45) 0 4px,transparent 4px 8px)}
+.bar.od{box-shadow:0 0 0 2px #d92d2d}
+.hl>.lab,.hl>.tl,.hl{background-color:var(--hl)!important}.bar.hl{outline:2px solid var(--ink)}
+.today{position:absolute;top:0;bottom:0;width:2px;background:#d92d2d;z-index:2;pointer-events:none}
+.today::after{content:"сегодня";position:absolute;top:24px;left:4px;font-size:10px;color:#d92d2d;font-weight:600}
+/* Table */
+.fl{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}.fl input{flex:1;min-width:180px}
+.tw{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:auto;max-height:720px}
+table{border-collapse:collapse;width:100%;min-width:1250px}
+th{position:sticky;top:0;background:var(--card);text-align:left;padding:8px;border-bottom:2px solid var(--line);cursor:pointer;white-space:nowrap;z-index:1;font-weight:600}
+td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr.hl td,tr.sel td{background:var(--hl)}tr.od td:nth-child(5){color:var(--badt);font-weight:600}tr.od td:first-child{box-shadow:inset 3px 0 #d92d2d}
+tr.od{background:var(--bad)}
+td textarea{width:200px;height:48px;resize:vertical;background:transparent;border:1px solid var(--line);border-radius:6px;padding:4px 6px}
+td select{font-weight:500}
+.dot{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:6px}
+.q{color:#b45309;font-weight:600;cursor:help}
+.clar{margin-top:14px}.clar ol{margin:6px 0 0;padding-left:20px}.clar li{margin-bottom:4px}
+.empty{padding:24px;text-align:center;color:var(--mut)}
+@media (max-width:1000px){.sum{grid-template-columns:1fr}}
+@media (max-width:760px){.gw,.vt{display:none!important}.wrap{padding:10px}header h1{font-size:20px}}
+@media print{@page{size:A4 landscape;margin:10mm}body{background:#fff;color:#000}.tb,.fl,.vt{display:none!important}.gw{display:block!important}.gantt,.tw{max-height:none;overflow:visible}table{min-width:0;font-size:9px}td textarea{border:0;height:auto;width:120px}header{background:#fff;color:#000;border:1px solid #000}header p,header .per{color:#000}.card,.gw,.tw{break-inside:avoid}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Преобразование концепции предмета «Проектная деятельность» в НовГУ</h1>
+  <div class="per">Календарный план · сентябрь 2026 — май 2027 · команда «Социальный», научно-исследовательский трек</div>
+  <p>Цель: повысить качество и результативность проектной деятельности в НовГУ за счёт добровольного выбора траектории участия (продвинутый и базовый уровни) и подготовить модель к масштабированию.</p>
+</header>
+
+<section class="sum">
+  <div class="card"><h3 id="sTot"></h3><div class="badges" id="sBadges"></div></div>
+  <div class="card"><h3>Ближайшие 5 дедлайнов</h3><ul class="dl" id="sDl"></ul></div>
+  <div class="card"><h3>Загрузка по ответственным</h3><div class="ld" id="sLd"></div></div>
+</section>
+
+<div class="bar2 tb">
+  <div class="seg" id="viewSeg"><button data-v="gantt">Гант</button><button data-v="table">Таблица</button><button data-v="both">Оба</button></div>
+  <span class="sp"></span>
+  <button id="bCsv">Скачать CSV</button><button id="bPrint">Печать / PDF</button><button id="bReset">Сбросить изменения</button>
+</div>
+
+<div class="fl">
+  <select id="fStage"></select><select id="fResp"></select><select id="fStatus"></select><select id="fMonth"></select>
+  <input type="search" id="fQ" placeholder="Поиск по названию задачи">
+</div>
+
+<div class="gw vg"><div class="gantt" id="gantt"></div></div>
+<div class="vt"><div class="tw"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div></div>
+
+</div>
+
+<script>
+/* ===== ДАННЫЕ (правьте здесь) =====
+   Поля задачи: [ID, номер этапа, задача, начало, окончание (ГГГГ-ММ-ДД), ответственный, ожидаемый результат, [зависимости], 1 = «уточнить»] */
+const STAGES=['1. Старт и обоснование','2. Исследование','3. Разработка модели','4. Согласование','5. Информирование и пилот','6. Оценка и защита'];
+const COLORS=['#3b5bdb','#0c8599','#2f9e44','#e8590c','#ae3ec9','#c2255c'];
+const STATUSES=['Не начато','В работе','На паузе','Завершено','Отменено'];
+const HOLIDAYS=['2026-11-04','2026-12-31','2027-01-01','2027-01-02','2027-01-03','2027-01-04','2027-01-05','2027-01-06','2027-01-07','2027-01-08','2027-02-23','2027-03-08','2027-05-03','2027-05-10']; // нерабочие дни (проверьте по календарю вуза)
+const RAW=[
+[1,0,'Распределить роли и составить матрицу ответственности','2026-09-01','2026-09-04','Козлова В.','Таблица ролей и матрица ответственности (исполнитель / ответственный / консультант / наблюдатель)',[],0],
+[2,0,'Зафиксировать концепцию: продвинутый и базовый уровни','2026-09-07','2026-09-11','Савченко А.','Описание двух уровней: продвинутый (отдельные группы, дифзачёт, защита проектов) и базовый (зачёт/незачёт, основы ПД)',[1],0],
+[3,0,'Подготовить обоснование проблемы и актуальности','2026-09-07','2026-09-18','Казачкова В.','Текст обоснования проблемы и актуальности проекта',[1],0],
+[4,0,'Сформулировать проблему, цель, задачи и гипотезу','2026-09-14','2026-09-25','Цахаева А.','Итоговые формулировки цели, задач и проверяемой гипотезы',[2],0],
+[5,0,'Изучить аналоги (Московский Политех, Финансовый университет)','2026-09-07','2026-09-30','Белова С.','Таблица аналогов: чем они похожи на проект, что можно заимствовать',[1],0],
+[6,1,'Разработать программу исследования и анкету','2026-09-28','2026-10-09','Казачкова В.','Программа исследования, анкета из 23 вопросов в Google Forms',[3,4],0],
+[7,1,'Согласовать анкету с наставником и ШПО','2026-10-12','2026-10-16','Козлова В.','Утверждённая анкета, разрешение на опрос',[6],0],
+[8,1,'Провести опрос студентов и преподавателей','2026-10-19','2026-11-13','Белова С.','Массив ответов респондентов (студенты 1–2 курсов, преподаватели)',[7],0],
+[9,1,'Провести интервью с преподавателями и сотрудниками ШПО','2026-10-19','2026-11-20','Тихонов Д.','Конспекты интервью, данные о нагрузке преподавателей',[7],0],
+[10,1,'Проанализировать действующие правила проведения ПД в НовГУ','2026-10-05','2026-11-06','Язынин М.','Справка о том, как правила НовГУ допускают выбор уровня ПД',[3],0],
+[11,1,'Обработать данные и подготовить аналитический отчёт','2026-11-23','2026-12-11','Казачкова В.','Отчёт о состоянии ПД: вовлечённость, причины, нагрузка',[8,9,10],0],
+[12,2,'Разработать критерии распределения по уровням','2026-11-23','2026-12-11','Цахаева А.','Критерии и порядок распределения, правила смены уровня',[8],0],
+[13,2,'Описать содержание продвинутого и базового уровней','2026-12-14','2026-12-25','Тихонов Д.','Содержание двух треков: формат занятий, зачёт, защита проектов',[12],0],
+[14,2,'Подготовить форму согласия абитуриента','2026-12-14','2026-12-25','Савченко А.','Бланк согласия с выбором уровня',[10,12],0],
+[15,2,'Подготовить методические рекомендации','2026-12-28','2027-01-29','Цахаева А.','Методические рекомендации по работе двух уровней',[13,14],0],
+[16,2,'Провести промежуточную защиту проекта','2027-01-11','2027-01-22','Козлова В.','Презентация промежуточных результатов, замечания наставника',[13,14],1],
+[17,3,'Собрать пакет документов для согласования','2027-02-01','2027-02-12','Язынин М.','Проект изменений в положение о ПД, форма согласия, обоснование',[14,15],0],
+[18,3,'Согласовать модель с ШПО и наставником','2027-02-15','2027-02-26','Козлова В.','Поддержка ШПО, замечания к модели',[17],0],
+[19,3,'Согласовать с администрацией, учебным управлением и преподавателями ПД','2027-03-01','2027-03-19','Савченко А.','Одобрение администрации, учебного управления и преподавателей, список замечаний',[18],0],
+[20,3,'Доработать модель по замечаниям','2027-03-22','2027-04-02','Язынин М.','Итоговая версия модели и документов',[19],0],
+[21,4,'Подготовить информационные материалы о ПД и уровнях','2027-02-15','2027-03-05','Белова С.','Памятка, инфографика, короткое видео',[14],0],
+[22,4,'Информировать студентов 1 курса пилотного направления','2027-03-09','2027-03-26','Белова С.','Проведённые встречи, список заинтересованных студентов',[18,21],0],
+[23,4,'Выбрать направление и подготовить пилот','2027-03-01','2027-03-26','Тихонов Д.','Выбранное направление, списки групп и преподавателей',[18],1],
+[24,4,'Провести пилотное внедрение','2027-04-05','2027-04-30','Козлова В.','Работающие группы базового и продвинутого уровней',[20,22,23],1],
+[25,5,'Собрать обратную связь и оценить результаты пилота','2027-05-03','2027-05-14','Казачкова В.','Динамика вовлечённости, качества проектов, удовлетворённости, нагрузки',[24],0],
+[26,5,'Подготовить рекомендации по масштабированию','2027-05-17','2027-05-25','Цахаева А.','Рекомендации для других направлений и факультетов',[25],0],
+[27,5,'Подготовить презентацию и итоговый продукт','2027-05-17','2027-05-25','Савченко А.','Презентация, модель, форма согласия, методические рекомендации',[25],0],
+[28,5,'Презентовать и защитить проект','2027-05-26','2027-05-31','Козлова В.','Защищённый проект, итоговый отчёт для ШПО',[26,27],1]
+];
+/* ===== ЛОГИКА ===== */
+const KEY='pd-novgu-plan-v1',DAY=864e5,PX=5;
+const D=s=>new Date(+s.slice(0,4),+s.slice(5,7)-1,+s.slice(8,10));
+const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const fmt=d=>String(d.getDate()).padStart(2,'0')+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+d.getFullYear();
+const P0=D('2026-09-01'),P1=D('2027-05-31'),off=d=>Math.round((d-P0)/DAY);
+const TODAY=new Date();TODAY.setHours(0,0,0,0);
+const MON=['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
+function wdays(a,b){let n=0;for(let d=new Date(a);d<=b;d.setDate(d.getDate()+1)){const w=d.getDay();if(w&&w<6&&!HOLIDAYS.includes(iso(d)))n++}return n}
+const TS=RAW.map(a=>({id:a[0],stage:a[1],name:a[2],sd:D(a[3]),ed:D(a[4]),resp:a[5],res:a[6],dep:a[7],q:a[8]})).map(t=>({...t,dur:wdays(t.sd,t.ed)}));
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $=id=>document.getElementById(id);
+let S={st:{},cm:{},f:{stage:'',resp:'',status:'',month:'',q:''},view:'both',col:{},sort:{k:'id',d:1}};
+try{const x=JSON.parse(localStorage.getItem(KEY));if(x)S=Object.assign(S,x)}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const status=t=>S.st[t.id]||STATUSES[0];
+const sIdx=t=>STATUSES.indexOf(status(t));
+const overdue=t=>t.ed<TODAY&&sIdx(t)<3;
+const RESPS=[...new Set(TS.map(t=>t.resp))].sort();
+const MONTHS=[];for(let d=new Date(P0.getFullYear(),P0.getMonth(),1);d<=P1;d.setMonth(d.getMonth()+1))MONTHS.push(new Date(d));
+
+function filtered(){
+  const f=S.f,q=f.q.trim().toLowerCase();
+  let r=TS.filter(t=>{
+    if(f.stage!==''&&String(t.stage)!==f.stage)return false;
+    if(f.resp&&t.resp!==f.resp)return false;
+    if(f.status&&status(t)!==f.status)return false;
+    if(f.month){const m=D(f.month+'-01'),me=new Date(m.getFullYear(),m.getMonth()+1,0);if(t.sd>me||t.ed<m)return false}
+    return !q||t.name.toLowerCase().includes(q);
+  });
+  const k=S.sort.k,d=S.sort.d;
+  const val={id:t=>t.id,stage:t=>t.stage,name:t=>t.name,sd:t=>+t.sd,ed:t=>+t.ed,dur:t=>t.dur,resp:t=>t.resp,res:t=>t.res,dep:t=>t.dep.join(),status:t=>sIdx(t),cm:t=>S.cm[t.id]||''}[k];
+  return r.sort((a,b)=>{const x=val(a),y=val(b);return (x>y?1:x<y?-1:a.id-b.id)*d});
+}
+/* --- Сводка --- */
+function renderSummary(){
+  $('sTot').textContent='Всего задач: '+TS.length;
+  $('sBadges').innerHTML=STATUSES.map((s,i)=>`<span class="b s${i}">${s} <i>${TS.filter(t=>status(t)===s).length}</i></span>`).join('');
+  const up=TS.filter(t=>sIdx(t)<3&&t.ed>=TODAY).sort((a,b)=>a.ed-b.ed||a.id-b.id).slice(0,5);
+  $('sDl').innerHTML=up.length?up.map(t=>`<li data-go="${t.id}"><span>${t.id}. ${esc(t.name)}</span><span>${fmt(t.ed)}</span></li>`).join(''):'<li>Открытых дедлайнов нет</li>';
+  const load=RESPS.map(r=>{const l=TS.filter(t=>t.resp===r);return{r,n:l.length,d:l.reduce((s,t)=>s+t.dur,0)}});
+  const mx=Math.max(...load.map(x=>x.d));
+  $('sLd').innerHTML=load.map(x=>`<span>${esc(x.r)}</span><div class="tr"><div style="width:${x.d/mx*100}%"></div></div><em>${x.n} зад. · ${x.d} р.д.</em>`).join('');
+}
+/* --- Гант --- */
+function renderGantt(){
+  const W=(off(P1)+1)*PX,list=filtered();
+  let h=`<div class="gi" style="width:${250+W}px"><div class="gh"><div class="r"><div class="lab">Месяцы</div><div class="tl" style="width:${W}px">`;
+  MONTHS.forEach(m=>{const e=new Date(m.getFullYear(),m.getMonth()+1,0);h+=`<div class="m" style="left:${off(m)*PX}px;width:${(off(e)-off(m)+1)*PX}px">${MON[m.getMonth()]} ${m.getFullYear()}</div>`});
+  h+=`</div></div><div class="r"><div class="lab">Недели (начало, число)</div><div class="tl" style="width:${W}px">`;
+  for(let d=new Date(P0);d<=P1;d.setDate(d.getDate()+1))if(d.getDay()===1)h+=`<div class="w" style="left:${off(d)*PX}px;width:${7*PX}px">${d.getDate()}</div>`;
+  h+='</div></div></div>';
+  // Группы по этапам; сворачивание хранится в S.col
+  STAGES.forEach((sn,si)=>{
+    const g=list.filter(t=>t.stage===si);if(!g.length)return;
+    const c=S.col[si];
+    h+=`<div class="r grp"><div class="lab" data-tg="${si}"><b style="background:${COLORS[si]}"></b>${c?'▸':'▾'} ${sn} (${g.length})</div><div class="tl" style="width:${W}px"></div></div>`;
+    if(c)return;
+    g.forEach(t=>{
+      const l=off(t.sd)*PX,w=(off(t.ed)-off(t.sd)+1)*PX,right=l+w>W-300;
+      const lbl=`${t.id}. ${esc(t.name)}`;
+      h+=`<div class="r" id="gr-${t.id}" data-id="${t.id}"><div class="lab" data-go="${t.id}" title="${esc(t.name)}">${t.id}. ${esc(t.name)}</div><div class="tl" style="width:${W}px;background-size:${7*PX}px 100%;background-position:${6*PX}px 0">
+      <div class="bar s-${sIdx(t)}${overdue(t)?' od':''}" id="bar-${t.id}" data-go="${t.id}" title="${lbl}: ${fmt(t.sd)} – ${fmt(t.ed)}" style="left:${l}px;width:${w}px;background-color:${COLORS[t.stage]}"></div>
+      <span class="bl" style="${right?`right:${W-l+6}px`:`left:${l+w+6}px`}">${lbl}</span></div></div>`;
+    });
+  });
+  if(!list.length)h+='<div class="empty">Нет задач по выбранным фильтрам</div>';
+  if(TODAY>=P0&&TODAY<=P1)h+=`<div class="today" style="left:${250+off(TODAY)*PX}px"></div>`;
+  $('gantt').innerHTML=h+'</div>';
+}
+/* --- Таблица --- */
+const COLS=[['id','ID'],['stage','Этап'],['name','Задача'],['sd','Начало'],['ed','Окончание'],['dur','Длит., р.д.'],['resp','Ответственный'],['res','Результат'],['dep','Зависимости'],['status','Статус'],['cm','Комментарий']];
+function renderTable(){
+  $('thead').innerHTML='<tr>'+COLS.map(([k,n])=>`<th data-sort="${k}">${n}${S.sort.k===k?(S.sort.d>0?' ▲':' ▼'):''}</th>`).join('')+'</tr>';
+  const list=filtered();
+  $('tbody').innerHTML=list.map(t=>`<tr id="tr-${t.id}" data-id="${t.id}" class="${overdue(t)?'od':''}">
+    <td>${t.id}</td><td><span class="dot" style="background:${COLORS[t.stage]}"></span>${STAGES[t.stage]}</td>
+    <td>${esc(t.name)}</td><td>${fmt(t.sd)}</td><td>${fmt(t.ed)}${overdue(t)?'<br><small>просрочено</small>':''}</td><td>${t.dur}</td>
+    <td>${esc(t.resp)}</td><td>${esc(t.res)}</td><td>${t.dep.join(', ')||'—'}</td>
+    <td><select data-st="${t.id}" class="b s${sIdx(t)}">${STATUSES.map(s=>`<option${s===status(t)?' selected':''}>${s}</option>`).join('')}</select></td>
+    <td><textarea data-cm="${t.id}" placeholder="Комментарий">${esc(S.cm[t.id]||'')}</textarea></td></tr>`).join('')||`<tr><td colspan="11" class="empty">Нет задач по выбранным фильтрам</td></tr>`;
+}
+function renderAll(){renderSummary();renderGantt();renderTable();applyView()}
+function applyView(){
+  document.querySelector('.vg').style.display=S.view==='table'?'none':'';
+  document.querySelector('.vt').style.display=S.view==='gantt'?'none':'';
+  document.querySelectorAll('#viewSeg button').forEach(b=>b.classList.toggle('on',b.dataset.v===S.view));
+}
+/* --- Фильтры --- */
+function initFilters(){
+  const opt=(id,first,items)=>{$(id).innerHTML=`<option value="">${first}</option>`+items.map(([v,n])=>`<option value="${v}">${n}</option>`).join('')};
+  opt('fStage','Все этапы',STAGES.map((s,i)=>[i,s]));opt('fResp','Все ответственные',RESPS.map(r=>[r,r]));
+  opt('fStatus','Все статусы',STATUSES.map(s=>[s,s]));opt('fMonth','Все месяцы',MONTHS.map(m=>[m.getFullYear()+'-'+String(m.getMonth()+1).padStart(2,'0'),MON[m.getMonth()]+' '+m.getFullYear()]));
+  [['fStage','stage'],['fResp','resp'],['fStatus','status'],['fMonth','month']].forEach(([id,k])=>{$(id).value=S.f[k];$(id).onchange=e=>{S.f[k]=e.target.value;save();renderAll()}});
+  $('fQ').value=S.f.q;$('fQ').oninput=e=>{S.f.q=e.target.value;save();renderGantt();renderTable()};
+}
+/* --- Выбор / подсветка: клик по полосе → строка таблицы, hover строки ↔ полоса --- */
+function select(id){
+  document.querySelectorAll('tr.sel').forEach(r=>r.classList.remove('sel'));
+  const tr=$('tr-'+id);if(tr){tr.classList.add('sel');tr.scrollIntoView({block:'center',behavior:'smooth'})}
+}
+function hover(id,on){[$('bar-'+id),$('gr-'+id),$('tr-'+id)].forEach(e=>e&&e.classList.toggle('hl',on))}
+document.addEventListener('click',e=>{
+  const g=e.target.closest('[data-go]');if(g){select(g.dataset.go);return}
+  const tg=e.target.closest('[data-tg]');if(tg){S.col[tg.dataset.tg]=!S.col[tg.dataset.tg];save();renderGantt();return}
+  const th=e.target.closest('th[data-sort]');if(th){const k=th.dataset.sort;S.sort=S.sort.k===k?{k,d:-S.sort.d}:{k,d:1};save();renderTable()}
+});
+['mouseover','mouseout'].forEach(ev=>document.addEventListener(ev,e=>{
+  const r=e.target.closest('tr[data-id],.r[data-id]');if(r)hover(r.dataset.id,ev==='mouseover')
+}));
+document.addEventListener('change',e=>{if(e.target.dataset.st){S.st[e.target.dataset.st]=e.target.value;save();renderAll()}});
+document.addEventListener('input',e=>{if(e.target.dataset.cm){S.cm[e.target.dataset.cm]=e.target.value;save()}}); // автосохранение
+/* --- Тулбар --- */
+$('viewSeg').onclick=e=>{const v=e.target.dataset.v;if(v){S.view=v;save();applyView()}};
+$('bPrint').onclick=()=>window.print();
+$('bReset').onclick=()=>{if(confirm('Сбросить статусы, комментарии и фильтры?')){S={st:{},cm:{},f:{stage:'',resp:'',status:'',month:'',q:''},view:'both',col:{},sort:{k:'id',d:1}};save();initFilters();renderAll()}};
+$('bCsv').onclick=()=>{
+  const q=v=>'"'+String(v).replace(/"/g,'""').replace(/\n/g,' ')+'"';
+  const rows=[['ID','Этап','Задача','Дата начала','Дата окончания','Длительность (раб. дни)','Ответственный','Ожидаемый результат','Зависимости (ID)','Статус','Комментарий']];
+  TS.forEach(t=>rows.push([t.id,STAGES[t.stage],t.name,fmt(t.sd),fmt(t.ed),t.dur,t.resp,t.res,t.dep.join(', '),status(t),S.cm[t.id]||'']));
+  const blob=new Blob(['\ufeff'+rows.map(r=>r.map(q).join(';')).join('\r\n')],{type:'text/csv;charset=utf-8'}); // BOM, чтобы Excel понял кириллицу
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='plan_pd_novgu.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+};
+initFilters();renderAll();
+</script>
+</body>
+</html>
